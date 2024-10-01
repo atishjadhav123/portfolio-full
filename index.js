@@ -21,6 +21,7 @@ app.use(express.static("dist"))
 app.use("/api/auth", require("./routes/auth.routes"))
 app.use("/api/admin", adminProtected, require("./routes/admin.routes"))
 app.use("/api/public", require("./routes/public.routes"))
+app.use("/api/contact", require("./routes/contact.routes"))
 
 app.use("*", (req, res) => {
     res.sendFile(path.json(__dirname, "dist", "index.html"))
